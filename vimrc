@@ -39,9 +39,9 @@ endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
-"if has("autocmd")
-"  filetype plugin indent on
-"endif
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -101,6 +101,7 @@ set laststatus=2
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
 
 execute pathogen#infect()
 set laststatus=2
