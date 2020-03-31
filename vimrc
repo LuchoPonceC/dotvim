@@ -60,7 +60,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "set relativenumber
-set laststatus=2
+"set laststatus=2
 set backspace=indent,eol,start
 set ignorecase
 set incsearch
@@ -73,7 +73,6 @@ set tabstop=4
 :autocmd BufNewFile main.cpp 0r /usr/share/vim/templates/skeleton.cpp
 :autocmd BufNewFile Comp*.cpp 0r /usr/share/vim/templates/skeletonCompetitive.cpp
 
-set laststatus=2
 set noshowmode
 
 
@@ -102,7 +101,8 @@ set laststatus=2
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+set splitbelow
+set splitright
 
 execute pathogen#infect()
-set laststatus=2
 
