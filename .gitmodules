@@ -26,3 +26,7 @@
 [submodule "pack/plugins/start/lightline"]
 	path = pack/plugins/start/lightline
 	url = git@github.com:itchyny/lightline.vim.git
+
+[submodule "bundle/vim-latex-live-preview"]
+	path = bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git

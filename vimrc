@@ -105,3 +105,12 @@ set splitright
 
 execute pathogen#infect()
 
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'okular'
+
+
+" maps for latex-vim to pdf
+
+nnoremap  <c-D> :! (pdflatex % ; rm -r ; rm -r *.aux *.log )<CR>
+nnoremap  <c-K> :! xdg-open $(echo % \| sed 's/tex$/pdf/') & disown<CR>
+
