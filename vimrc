@@ -70,8 +70,17 @@ set incsearch
 "inoremap {<CR> {<CR>}<C-o>O
 set number
 set tabstop=4
-:autocmd BufNewFile main.cpp 0r /usr/share/vim/templates/skeleton.cpp
-:autocmd BufNewFile Comp*.cpp 0r /usr/share/vim/templates/skeletonCompetitive.cpp
+:autocmd BufNewFile main.cpp 0r ~/.vim/skeleton_templates/skeleton.cpp
+:autocmd BufNewFile Comp*.cpp 0r ~/.vim/skeleton_templates/skeletonCompetitive.cpp
+:autocmd BufNewfile *_lecture_notes.tex call LatexLectureTemplate() 
+
+function! LatexLectureTemplate()
+	0r ~/.vim/skeleton_templates/latex/skeletonLectures.tex 
+	"Aca se debe colocar lo de la referencia, cuando me salga jaja	
+	":!touch References.bib
+	":autocmd FileAppendPost References.bib !mv /skeleton_templates/latex/
+endfunction
+
 
 set noshowmode
 
@@ -111,6 +120,6 @@ let g:livepreview_previewer = 'okular'
 
 " maps for latex-vim to pdf
 
-nnoremap  <c-D> :! (pdflatex % ; rm -r ; rm -r *.aux *.log )<CR>
+nnoremap  <c-D> :! (lualatex -synctex=1 -interaction=nonstopmode --shell-escape *.tex % && rm -r *.synctex.gz *.aux *.log )<CR>
 nnoremap  <c-K> :! xdg-open $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 
