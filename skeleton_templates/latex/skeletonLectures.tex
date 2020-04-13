@@ -5,6 +5,61 @@
 \usepackage{wasysym}
 \usepackage{multirow}
 \usepackage{hyperref}
+\usepackage{datetime}
+\usepackage{wasysym}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{indentfirst}
+
+%\usepackage{fontspec}
+%\usepackage[utf8]{inputenc}
+%\setmainfont{Futura}[ItalicFont={Futura Italic}]
+
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{0,0.5,1}
+\definecolor{colString}{rgb}{0.6,0.1,0.1}
+
+\lstset{%configuration de listings
+float=hbp,
+basicstyle=\ttfamily\small,
+identifierstyle=\color{colIdentifier},
+keywordstyle=\color{colKeys},
+stringstyle=\color{colString},
+commentstyle=\color{colComments},
+columns=flexible,
+tabsize=2,
+%frame=trBL, 
+frameround=tttt,
+extendedchars=true, 
+showspaces=false, 
+showstringspaces=false, 
+numbers=left, 
+numberstyle=\tiny, 
+breaklines=true, 
+breakautoindent=true, 
+captionpos=b,
+xrightmargin= 1cm, 
+xleftmargin= 1cm 
+} 
+\lstset{language=c++}
+\lstset{commentstyle=\textit}
+
+
+\parskip 5pt plus 2pt minus 2pt 
+\textwidth=14cm
+\oddsidemargin=1cm
+\evensidemargin=1cm
+\topmargin=-0.5cm
+\headheight=0cm
+\headsep=1cm
+\textheight=23cm
+\parindent=1.5cm
+
+
+
 
 \title{COLOCAR EL TITULO}
 \author{Lusho Ponce}
@@ -13,26 +68,4 @@
 \begin{document}
 
 \maketitle
-
-\section{Introduction}
-* Colocar los apuntes \\ 
-** It consists of group of nodes in a sequence.\\
-In simple words, a linked list consists of nodes where each node contains a data field and a reference (link) to the next node in the list.\\
-** Shown in Figure.  
-
-\includegraphics[width=12cm,height=5cm]{/home/lusho/.vim/skeleton_templates/latex/tekken7.jpg}
-\subsection{Divide in subsections}
-* In a doubly linked list, each node contains a data part
-and two addresses,one for the previous node and other one for the next node, As shown in Figure.\\
-\includegraphics[width=12cm,height=5cm]{/home/lusho/.vim/skeleton_templates/latex/tekken7.jpg}
-\subsection{ Circular Singly Linked List}
-* In circular singly linked list the last node of the list holds the address of the first node hence forming a circular chain, As shown in Figure.\\
-\includegraphics[width=12cm,height=5cm]{/home/lusho/.vim/skeleton_templates/latex/tekken7.jpg}
-
-\subsection{ Circular Doubly Linked List}
-In circular doubly linked list the forward node points to the first node and backward pointer of the first node points to the last node, As shown in Figure.
-
-
-\includegraphics[width=12cm,height=5cm]{/home/lusho/.vim/skeleton_templates/latex/tekken7.jpg}
-
 \end{document}
