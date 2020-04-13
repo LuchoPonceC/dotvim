@@ -120,6 +120,6 @@ let g:livepreview_previewer = 'okular'
 
 " maps for latex-vim to pdf
 
-nnoremap  <c-D> :! (lualatex -synctex=1 -interaction=nonstopmode --shell-escape *.tex % && rm -r *.synctex.gz *.aux *.log )<CR>
+nnoremap  <c-D> :! (lualatex -synctex=1 -interaction=nonstopmode --shell-escape  % ; rm -r *.synctex.gz *.aux *.log )<CR>
 nnoremap  <c-K> :! xdg-open $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 
