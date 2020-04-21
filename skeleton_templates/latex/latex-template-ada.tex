@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\selectlanguage{spanish}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[noend]{algorithmic}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solución]}
+  {\end{proof}}
+
+%pseudocodigo
+\newcommand{\TITLE}[1]{\item[#1]}
+\renewcommand{\algorithmiccomment}[1]{$/\!/$ \parbox[t]{4.5cm}{\raggedright #1}}
+% ugly hack for for/while
+\newbox\fixbox
+\renewcommand{\algorithmicdo}{\setbox\fixbox\hbox{\ {} }\hskip-\wd\fixbox}
+% end of hack
+%imitando para if
+\renewcommand{\algorithmicthen}{\setbox\fixbox\hbox{\ {} }\hskip-\wd\fixbox}
+\newcommand{\algcost}[2]{\strut\hfill\makebox[1.5cm][l]{#1}\makebox[4cm][l]{#2}}
+
+%piso techo 
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+ 
+ \newenvironment{ejercicio}[2][Ejercicio]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%If you want to title your bold things something different just make another thing exactly like this but replace "problem" with the name of the thing you want, like theorem or lemma or whatever
+ 
+\begin{document}
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+%Good resources for looking up how to do stuff:
+%Binary operators: http://www.access2science.com/latex/Binary.html
+%General help: http://en.wikibooks.org/wiki/LaTeX/Mathematics
+%Or just google stuff
+
+
+ 
+\title{Template}
+\author{Análisis y Diseño de Algoritmos}
+\maketitle
+
+\section{Pseudocodigo}
+
+Recibe: ...
+
+Devuelve: ...
+\begin{algorithmic}[1]
+  \TITLE{\textsc{Nombre-Algoritmo}$(Parametro1,Parametro2)$}
+    \algcost{\textit{cost}}{\textit{times}}
+ % \FOR{$j=2$ \TO $A.\mathit{length}$
+   \IF{condicion \algcost{$.$}{$.$}} 
+    %\algcost{$.$}{$.$}}
+    \STATE hacer algo
+      \ENDIF 
+    \STATE \textsc{Llamada-Subrutina}$(.,.)$ \algcost{$.$}{$.$}
+  \STATE $asignacioni = asignaciond$  
+    \algcost{$.$}{$.$}
+  \STATE \COMMENT{Un comentario $a$}
+ %   \algcost{$0$}{$.$}
+  \WHILE{condicion \AND condicion
+    \algcost{$.$}{$.$}}
+  \STATE hacer algo
+    \algcost{$.$}{$.$}
+  \STATE hacer algo
+    \algcost{$.$}{$.$}
+  \ENDWHILE
+  \STATE hacer algo
+    \algcost{$.$}{$.$}
+  \FOR{$i=1$ TO $n$}  
+  \STATE hacer algo
+  \ENDFOR
+
+\end{algorithmic}
+
+\section{Otros}
+
+\subsection*{Ejercicios}
+
+\begin{ejercicio}{$i$}
+Enunciado Ejercicio $i$
+\end{ejercicio}
+\begin{solution}
+Solucion ejercicio $i$.
+Solucion ejercicio $i$.
+\\
+Solucion ejercicio $i$.
+\\
+Solucion ejercicio $i$.
+Solucion ejercicio $i$.
+Solucion ejercicio $i$.
+Solucion ejercicio $i$.
+
+\begin{itemize}
+\item[Caso 1]
+\item[Caso 2]
+\end{itemize}
+
+\end{solution}
+
+\subsection*{Colores}
+
+
+{
+\color{red}
+Texto en color rojo
+}
+
+{
+\color{blue}
+Texto en color azul
+}
+
+\subsection*{Bloque de varias desigualdades
+}
+
+\begin{eqnarray*}
+A&=&B \\
+&\leq& C \\
+&=&D
+\end{eqnarray*}
+
+\subsection*{
+Recurrencias
+}
+
+\begin{equation*}
+T(n) =
+\begin{cases}
+c & n = k\\
+T(m) + b & \text{caso contrário}
+\end{cases}
+\end{equation*}
+
+
+\subsection*{Expresion matematica centrada
+}
+
+$$a=b+c=c+d$$
+
+\subsection*{Piso y techo
+}
+
+$\floor*{x},
+\ceil*{x},$
+
+\subsection*{Letras}
+
+$\N,\Z,\Omega,\omega,\Theta$
+
+\subsection*{Texto en ecuación}
+
+$x \mbox{ hola } y$
+
+
+\end{document}

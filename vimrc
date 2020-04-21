@@ -61,7 +61,7 @@ endif
 
 "set relativenumber
 "set laststatus=2
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 set ignorecase
 set incsearch
 
@@ -73,6 +73,8 @@ set tabstop=4
 :autocmd BufNewFile main.cpp 0r ~/.vim/skeleton_templates/skeleton.cpp
 :autocmd BufNewFile Comp*.cpp 0r ~/.vim/skeleton_templates/skeletonCompetitive.cpp
 :autocmd BufNewfile *_lecture_notes.tex call LatexLectureTemplate() 
+:autocmd BufNewfile *_math.tex 0r ~/.vim/skeleton_templates/latex/latex-template-ada.tex
+
 
 function! LatexLectureTemplate()
 	0r ~/.vim/skeleton_templates/latex/skeletonLectures.tex 
@@ -120,6 +122,6 @@ let g:livepreview_previewer = 'okular'
 
 " maps for latex-vim to pdf
 
-nnoremap  <c-D> :! (lualatex -synctex=1 -interaction=nonstopmode --shell-escape  % ; rm -r *.synctex.gz *.aux *.log )<CR>
+nnoremap  <c-D> :! (lualatex -synctex=1 -interaction=nonstopmode --shell-escape  % ; rm -r *.aux; rm -r *.log ;rm -r *.out;rm -r *.synctex.gz)<CR>
 nnoremap  <c-K> :! xdg-open $(echo % \| sed 's/tex$/pdf/') & disown<CR>
 
