@@ -99,14 +99,14 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin indent on
+"filetype plugin indent on
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
 set shellslash
 set nocompatible
 " OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
+"filetype indent on
 set laststatus=2
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -118,7 +118,8 @@ set splitright
 execute pathogen#infect()
 
 autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'okular'
+autocmd vimenter * colorscheme gruvbox
+set bg=dark
 
 
 " maps for latex-vim to pdf
