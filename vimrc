@@ -84,10 +84,7 @@ function! LatexLectureTemplate()
 	":autocmd FileAppendPost References.bib !mv /skeleton_templates/latex/
 endfunction
 
-
 set noshowmode
-
-
 
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -119,7 +116,7 @@ execute pathogen#infect()
 
 autocmd Filetype tex setl updatetime=1
 autocmd vimenter * colorscheme gruvbox
-set bg=dark
+set bg=light
 
 
 " maps for latex-vim to pdf
