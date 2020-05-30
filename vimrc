@@ -116,7 +116,7 @@ execute pathogen#infect()
 
 autocmd Filetype tex setl updatetime=1
 autocmd vimenter * colorscheme gruvbox
-set bg=light
+set bg=dark
 
 
 " maps for latex-vim to pdf
